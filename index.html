@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimTDP — Simulador de la Transformación Digital Productiva</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts — editorial pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─────────────────────────────── NAV ─────────────────────────────── -->
+  <nav class="topnav" id="topnav">
+    <div class="topnav__brand">
+      <svg class="topnav__logo" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M10 22V10h4l4 6 4-6h4v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>DLAB · CEPAL</span>
+    </div>
+    <button class="topnav__toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="topnav__links" id="navLinks">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#problema">Problema</a></li>
+      <li><a href="#quees">Qué es</a></li>
+      <li><a href="#funciona">Cómo funciona</a></li>
+      <li><a href="#priorizacion">Priorización</a></li>
+      <li><a href="#escenarios">Escenarios</a></li>
+      <li><a href="#impactos">Impactos</a></li>
+      <li><a href="#paises">Países</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─────────────────────── A) HERO ─────────────────────── -->
+  <section class="section hero" id="hero">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__content anim" data-anim="fade-up">
+      <p class="hero__eyebrow">DLAB · Laboratorio de Datos de CEPAL</p>
+      <h1 class="hero__title">SimTDP</h1>
+      <p class="hero__subtitle">Simulador de la Transformación<br/>Digital Productiva</p>
+      <p class="hero__desc">Una herramienta de simulación para anticipar los efectos de políticas de digitalización en la estructura productiva de América Latina y el Caribe.</p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" id="btnVideo">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
+          Ver video
+        </button>
+        <a href="#quees" class="btn btn--outline">Explorar</a>
+      </div>
+    </div>
+    <div class="hero__scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 40" width="18" height="30"><rect x="7" y="1" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="8" r="2" fill="currentColor" class="hero__scroll-dot"/></svg>
+    </div>
+  </section>
+
+  <!-- ────────────────── B) EL PROBLEMA ────────────────── -->
+  <section class="section section--dark" id="problema">
+    <div class="container">
+      <p class="section__eyebrow anim" data-anim="fade-up">El desafío</p>
+      <h2 class="section__title anim" data-anim="fade-up">¿Por qué se necesita SimTDP?</h2>
+      <div class="cards-row">
+        <!-- card 1 -->
+        <article class="card anim" data-anim="fade-up" style="--delay:.1s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M14 24h6m4 0h10M24 14v6m0 4v10" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card__title">Evidencia fragmentada</h3>
+          <p class="card__text">Los datos sobre digitalización productiva están dispersos en múltiples fuentes, dificultando un diagnóstico integral.</p>
+        </article>
+        <!-- card 2 -->
+        <article class="card anim" data-anim="fade-up" style="--delay:.2s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M16 30 l4-8 4 4 4-10 4 6" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="18" x2="16" y2="16" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card__title">Incertidumbre ex-ante</h3>
+          <p class="card__text">Los tomadores de decisión carecen de herramientas para anticipar los efectos de las políticas antes de implementarlas.</p>
+        </article>
+        <!-- card 3 -->
+        <article class="card anim" data-anim="fade-up" style="--delay:.3s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="18" cy="20" r="4" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="30" cy="20" r="4" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="24" cy="32" r="4" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+          </div>
+          <h3 class="card__title">Descoordinación de políticas</h3>
+          <p class="card__text">Las intervenciones sectoriales a menudo operan en silos, reduciendo la sinergia y el impacto agregado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── C) QUÉ ES SimTDP ────────────────── -->
+  <section class="section" id="quees">
+    <div class="container container--narrow">
+      <p class="section__eyebrow anim" data-anim="fade-up">Definición</p>
+      <h2 class="section__title anim" data-anim="fade-up">¿Qué es SimTDP?</h2>
+      <div class="quees__body anim" data-anim="fade-up">
+        <p>SimTDP es un <strong>simulador interactivo</strong> desarrollado por el Laboratorio de Datos (DLAB) de la CEPAL. Permite a gobiernos y actores del ecosistema digital explorar escenarios de política de transformación digital productiva y visualizar sus posibles efectos sobre variables clave de la economía.</p>
+        <div class="quees__badge">
+          <svg viewBox="0 0 40 40" width="36" height="36"><rect x="4" y="4" width="32" height="32" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/><text x="20" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="var(--accent)">DL</text></svg>
+          <div>
+            <strong>DLAB</strong>
+            <span>Laboratorio de Datos · CEPAL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── D) CÓMO FUNCIONA ────────────────── -->
+  <section class="section section--dark" id="funciona">
+    <div class="container">
+      <p class="section__eyebrow anim" data-anim="fade-up">Proceso</p>
+      <h2 class="section__title anim" data-anim="fade-up">¿Cómo funciona?</h2>
+
+      <!-- Timeline -->
+      <div class="timeline anim" data-anim="fade-up" id="timeline">
+        <div class="timeline__track">
+          <div class="timeline__progress" id="timelineProgress"></div>
+        </div>
+        <div class="timeline__steps">
+          <button class="timeline__step is-active" data-step="0" aria-pressed="true">
+            <span class="timeline__dot"></span>
+            <span class="timeline__label">Diagnóstico</span>
+          </button>
+          <button class="timeline__step" data-step="1" aria-pressed="false">
+            <span class="timeline__dot"></span>
+            <span class="timeline__label">Política y simulación</span>
+          </button>
+          <button class="timeline__step" data-step="2" aria-pressed="false">
+            <span class="timeline__dot"></span>
+            <span class="timeline__label">Impacto</span>
+          </button>
+          <button class="timeline__step" data-step="3" aria-pressed="false">
+            <span class="timeline__dot"></span>
+            <span class="timeline__label">Comparación</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dashboard panels -->
+      <div class="dashboard" id="dashboard">
+        <div class="dashboard__panel is-visible" data-panel="0">
+          <div class="dashboard__header">
+            <h3>Diagnóstico de madurez digital</h3>
+            <p>Evaluación de la situación actual del país en múltiples dimensiones de la transformación digital productiva.</p>
+          </div>
+          <div class="dashboard__chart" id="diagChart"></div>
+        </div>
+        <div class="dashboard__panel" data-panel="1">
+          <div class="dashboard__header">
+            <h3>Política y simulación</h3>
+            <p>Seleccione instrumentos de política y ajuste la intensidad para simular los efectos proyectados.</p>
+          </div>
+          <div class="dashboard__sliders" id="policySliders"></div>
+        </div>
+        <div class="dashboard__panel" data-panel="2">
+          <div class="dashboard__header">
+            <h3>Impacto estimado</h3>
+            <p>Visualice los resultados proyectados sobre las variables objetivo tras la intervención simulada.</p>
+          </div>
+          <div class="dashboard__chart" id="impactChart"></div>
+        </div>
+        <div class="dashboard__panel" data-panel="3">
+          <div class="dashboard__header">
+            <h3>Comparación de escenarios</h3>
+            <p>Confronte diferentes combinaciones de políticas para identificar la estrategia más adecuada.</p>
+          </div>
+          <div class="dashboard__chart" id="compareChart"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── E) PRIORIZACIÓN ────────────────── -->
+  <section class="section" id="priorizacion">
+    <div class="container">
+      <p class="section__eyebrow anim" data-anim="fade-up">Análisis</p>
+      <h2 class="section__title anim" data-anim="fade-up">Priorización de sectores</h2>
+      <p class="section__intro anim" data-anim="fade-up">Identifique los sectores con mayor potencial de transformación digital según el enfoque seleccionado.</p>
+
+      <div class="heatmap-controls anim" data-anim="fade-up">
+        <div class="toggle-group" role="radiogroup" aria-label="Modo de priorización">
+          <button class="toggle-btn is-active" data-mode="topdown" role="radio" aria-checked="true" tabindex="0">
+            Top-down
+            <span class="tooltip" role="tooltip">Priorización guiada por objetivos estratégicos nacionales y potencial de impacto agregado.</span>
+          </button>
+          <button class="toggle-btn" data-mode="bottomup" role="radio" aria-checked="false" tabindex="-1">
+            Bottom-up
+            <span class="tooltip" role="tooltip">Priorización impulsada por la demanda y capacidad de los propios sectores productivos.</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="heatmap-wrapper anim" data-anim="fade-up">
+        <div class="heatmap" id="heatmap" role="img" aria-label="Mapa de calor de priorización sectorial"></div>
+        <div class="heatmap__legend">
+          <span>Bajo</span>
+          <div class="heatmap__gradient"></div>
+          <span>Alto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── F) ESCENARIOS ────────────────── -->
+  <section class="section section--dark" id="escenarios">
+    <div class="container">
+      <p class="section__eyebrow anim" data-anim="fade-up">Exploración</p>
+      <h2 class="section__title anim" data-anim="fade-up">Escenarios de simulación</h2>
+      <p class="section__intro anim" data-anim="fade-up">Compare los resultados proyectados bajo distintos supuestos de implementación de políticas.</p>
+
+      <div class="scenario-tabs anim" data-anim="fade-up" role="tablist" aria-label="Selección de escenario">
+        <button class="scenario-tab is-active" role="tab" aria-selected="true" data-scenario="base" id="tab-base">Base</button>
+        <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="acelerado" id="tab-acelerado">Acelerado</button>
+        <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="restricciones" id="tab-restricciones">Restricciones</button>
+      </div>
+
+      <div class="scenario-charts anim" data-anim="fade-up">
+        <div class="scenario-chart" id="scenarioChart1">
+          <h4>Productividad sectorial</h4>
+          <div class="chart-area" id="scenarioSVG1"></div>
+        </div>
+        <div class="scenario-chart" id="scenarioChart2">
+          <h4>Empleo digital</h4>
+          <div class="chart-area" id="scenarioSVG2"></div>
+        </div>
+        <div class="scenario-chart" id="scenarioChart3">
+          <h4>Brecha digital</h4>
+          <div class="chart-area" id="scenarioSVG3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── G) QUÉ IMPACTOS ESTIMA ────────────────── -->
+  <section class="section" id="impactos">
+    <div class="container">
+      <p class="section__eyebrow anim" data-anim="fade-up">Resultados</p>
+      <h2 class="section__title anim" data-anim="fade-up">¿Qué impactos estima?</h2>
+      <div class="impacts-grid">
+        <div class="impact anim" data-anim="fade-up" style="--delay:.05s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><rect x="8" y="20" width="6" height="16" rx="1" fill="var(--accent)"/><rect x="17" y="14" width="6" height="22" rx="1" fill="var(--accent)" opacity=".7"/><rect x="26" y="8" width="6" height="28" rx="1" fill="var(--accent)" opacity=".5"/><rect x="35" y="4" width="6" height="32" rx="1" fill="var(--accent)" opacity=".35"/></svg>
+          </div>
+          <span class="impact__label">Productividad</span>
+        </div>
+        <div class="impact anim" data-anim="fade-up" style="--delay:.1s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="14" r="6" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M14 38c0-6 4-10 10-10s10 4 10 10" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+          </div>
+          <span class="impact__label">Empleo</span>
+        </div>
+        <div class="impact anim" data-anim="fade-up" style="--delay:.15s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><path d="M8 38L24 10l16 28z" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><line x1="14" y1="28" x2="34" y2="28" stroke="var(--accent)" stroke-width="1.5"/></svg>
+          </div>
+          <span class="impact__label">Distribución del ingreso</span>
+        </div>
+        <div class="impact anim" data-anim="fade-up" style="--delay:.2s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="16" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M24 12v12l8 8" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="impact__label">Apropiación de beneficios</span>
+        </div>
+        <div class="impact anim" data-anim="fade-up" style="--delay:.25s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><rect x="10" y="10" width="28" height="28" rx="4" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M18 30v-4m4 4v-8m4 8v-6m4 6v-10" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="impact__label">Impacto fiscal</span>
+        </div>
+        <div class="impact anim" data-anim="fade-up" style="--delay:.3s">
+          <div class="impact__icon">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="16" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M16 20c4-6 12-6 16 0M16 28c4 6 12 6 16 0" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+          </div>
+          <span class="impact__label">Huella ambiental</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── H) CÓMO LO USAN LOS PAÍSES ────────────────── -->
+  <section class="section section--dark" id="paises">
+    <div class="container container--narrow">
+      <p class="section__eyebrow anim" data-anim="fade-up">Implementación</p>
+      <h2 class="section__title anim" data-anim="fade-up">¿Cómo lo usan los países?</h2>
+      <ul class="usage-list anim" data-anim="fade-up">
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20"><polyline points="4,12 9,17 20,6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Talleres presenciales con equipos de gobierno y sector privado para co-construir escenarios.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20"><polyline points="4,12 9,17 20,6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pilotos nacionales que calibran el modelo con datos locales y prioridades sectoriales.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20"><polyline points="4,12 9,17 20,6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sesiones de co-creación con actores del ecosistema digital para validar supuestos.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20"><polyline points="4,12 9,17 20,6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Informes de política basados en las simulaciones para la toma de decisiones.
+        </li>
+      </ul>
+      <div class="cta-block anim" data-anim="fade-up">
+        <a href="#footer" class="btn btn--primary btn--lg">Pilotos · Talleres · Co-creación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── I) FOOTER ────────────────── -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 22V10h4l4 6 4-6h4v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>DLAB · CEPAL</span>
+      </div>
+      <div class="footer__contact">
+        <p><a href="mailto:dlab-lac@cepal.org">dlab-lac@cepal.org</a></p>
+      </div>
+      <p class="footer__disclaimer">Prototipo de demostración — Los datos y resultados presentados son ilustrativos y no representan proyecciones oficiales.</p>
+    </div>
+  </footer>
+
+  <!-- Video modal (placeholder) -->
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar">&times;</button>
+      <div class="modal__placeholder">
+        <svg viewBox="0 0 120 80" width="120" height="80"><rect width="120" height="80" rx="8" fill="var(--surface-2)"/><polygon points="48,20 48,60 84,40" fill="var(--accent)" opacity=".6"/></svg>
+        <p>Video próximamente</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
